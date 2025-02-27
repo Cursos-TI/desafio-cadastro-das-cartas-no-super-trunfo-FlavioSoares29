@@ -1,50 +1,77 @@
 #include <stdio.h>
 
 int main() {
-   printf("Cartas Super Trunfo!\n");
-   printf("Novo commit\n");
-   class Cidade:
-    def __init__(self, nome, populacao, area, pib, pontos_turisticos):
-        self.nome = nome
-        self.populacao = populacao
-        self.area = area
-        self.pib = pib
-        self.pontos_turisticos = pontos_turisticos
+    // Variáveis para a primeira carta
+    char estado1;
+    char codigo1[4]; // 3 caracteres + '\0'
+    char cidade1[50];
+    int populacao1;
+    float area1;
+    float pib1;
+    int pontos_turisticos1;
 
-    def exibir_dados(self):
-        print(f"Nome: {self.nome}")
-        print(f"População: {self.populacao}")
-        print(f"Área: {self.area} km²")
-        print(f"PIB: R$ {self.pib}")
-        print(f"Número de Pontos Turísticos: {self.pontos_turisticos}")
-        print("-" * 30)
+    // Variáveis para a segunda carta
+    char estado2;
+    char codigo2[4]; // 3 caracteres + '\0'
+    char cidade2[50];
+    int populacao2;
+    float area2;
+    float pib2;
+    int pontos_turisticos2;
 
-def cadastrar_cidade():
-    nome = input("Arapiraca: ")
-    populacao = int(input("234.696: "))
-    area = float(input("345,655km²: "))
-    pib = float(input("25.248,44: "))
-    pontos_turisticos = int(input("9: "))
+    // Leitura dos dados da primeira carta
+    printf("Cadastro da Carta 1:\n");
+    printf("Estado (A-H): ");
+    scanf(" %c", &estado1);
+    printf("Código da Carta (ex: A01): ");
+    scanf("%s", codigo1);
+    printf("Nome da Cidade: ");
+    scanf(" %[^\n]", cidade1); // Lê até encontrar uma nova linha
+    printf("População: ");
+    scanf("%d", &populacao1);
+    printf("Área (em km²): ");
+    scanf("%f", &area1);
+    printf("PIB (em bilhões de reais): ");
+    scanf("%f", &pib1);
+    printf("Número de Pontos Turísticos: ");
+    scanf("%d", &pontos_turisticos1);
 
-    cidade = Cidade(nome, populacao, area, pib, pontos_turisticos)
-    return cidade
+    // Leitura dos dados da segunda carta
+    printf("\nCadastro da Carta 2:\n");
+    printf("Estado (A-H): ");
+    scanf(" %c", &estado2);
+    printf("Código da Carta (ex: B02): ");
+    scanf("%s", codigo2);
+    printf("Nome da Cidade: ");
+    scanf(" %[^\n]", cidade2); // Lê até encontrar uma nova linha
+    printf("População: ");
+    scanf("%d", &populacao2);
+    printf("Área (em km²): ");
+    scanf("%f", &area2);
+    printf("PIB (em bilhões de reais): ");
+    scanf("%f", &pib2);
+    printf("Número de Pontos Turísticos: ");
+    scanf("%d", &pontos_turisticos2);
 
-def main():
-    cidades = []
+    // Exibição dos dados da primeira carta
+    printf("\nCarta 1:\n");
+    printf("Estado: %c\n", estado1);
+    printf("Código: %s\n", codigo1);
+    printf("Nome da Cidade: %s\n", cidade1);
+    printf("População: %d\n", populacao1);
+    printf("Área: %.2f km²\n", area1);
+    printf("PIB: %.2f bilhões de reais\n", pib1);
+    printf("Número de Pontos Turísticos: %d\n", pontos_turisticos1);
 
-    while True:
-        print("\n--- Cadastro de Cidades ---")
-        cidade = cadastrar_cidade()
-        cidades.append(cidade)
+    // Exibição dos dados da segunda carta
+    printf("\nCarta 2:\n");
+    printf("Estado: %c\n", estado2);
+    printf("Código: %s\n", codigo2);
+    printf("Nome da Cidade: %s\n", cidade2);
+    printf("População: %d\n", populacao2);
+    printf("Área: %.2f km²\n", area2);
+    printf("PIB: %.2f bilhões de reais\n", pib2);
+    printf("Número de Pontos Turísticos: %d\n", pontos_turisticos2);
 
-        continuar = input("Deseja cadastrar outra cidade? (s/n): ").strip().lower()
-        if continuar != 's':
-            break
-
-    print("\n--- Dados das Cidades Cadastradas ---")
-    for cidade in cidades:
-        cidade.exibir_dados()
-
-if __name__ == "__main__":
-    main()
+    return 0;
 }
